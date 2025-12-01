@@ -19,3 +19,13 @@
     JOIN visited_countries 
     ON users.id = visited_countries.user_id
     WHERE users.id = $1; 
+
+--name: addUser
+    INSERT INTO users(name, colour) 
+    VALUES($1, $2)
+    RETURNING *;
+
+--name: deleteUser
+    DELETE FROM users 
+    WHERE users.id = $1
+    RETURNING *;

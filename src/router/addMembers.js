@@ -1,5 +1,6 @@
 import { Router } from "express";
-
+import { addUser } from "../db/pool.js";
+import { addMembersController } from "../controllers/addMembersController.js";
 /**
  * Creates and configures a router for handling member-related routes.
  *
@@ -25,9 +26,7 @@ import { Router } from "express";
 
 export default function addMembersRouter() {
   const router = Router();
-  router.post("/new", async (req, res) => {
-    console.log("New user added");
-    res.redirect("/");
-  });
+  router.post("/new", addMembersController);
+  router.post("/members/<%= user.id %>?_method=DELETE", )
   return router;
 }

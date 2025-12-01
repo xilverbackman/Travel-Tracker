@@ -83,8 +83,6 @@ button {
   text-transform: uppercase;
   outline: 0;
   background: teal;
-  /* float: right;
-  margin-bottom: -100px; */
   border: 0;
   padding: 15px;
   color: #ffffff;
@@ -92,6 +90,34 @@ button {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+}
+
+button.input.red {
+  background-color: red;
+}
+button.input.orange {
+  background-color: orange;
+}
+button.input.yellow {
+  background-color: yellow;
+}
+button.input.green {
+  background-color: green;
+}
+button.input.blue {
+  background-color: blue;
+}
+button.input.violet {
+  background-color: violet;
+}
+button.input.purple {
+  background-color: purple;
+}
+button.input.pink {
+  background-color: pink;
+}
+button.input.olive {
+  background-color: olive;
 }
 
 .total-count {
@@ -117,7 +143,7 @@ button {
 }
 
 .user-tabs form input[type="submit"] {
-  margin: 0;            /* remove the bottom gap */
-  width: auto;          /* optional: keeps button size to content */
-  display: inline-block;/* or block; either is fine */
+  margin: 0; /* remove the bottom gap */
+  width: auto; /* optional: keeps button size to content */
+  display: inline-block; /* or block; either is fine */
 }

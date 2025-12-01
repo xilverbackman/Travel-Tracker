@@ -1,0 +1,39 @@
+/* 1. Hide the native radios and kill their hitbox */
+form[action="/members/new"] input[type="radio"][name="color"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none; /* mouse can't click the invisible box */
+}
+
+/* 2. Make labels only wrap the little circle */
+form[action="/members/new"] label {
+  display: inline-block;
+}
+
+/* 3. Visible coloured dots (the thing you actually see & click) */
+form[action="/members/new"] label span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 4px;
+  cursor: pointer;
+}
+
+/* 4. Per-colour backgrounds */
+form[action="/members/new"] span.red    { background-color: red; }
+form[action="/members/new"] span.orange { background-color: orange; }
+form[action="/members/new"] span.yellow { background-color: yellow; }
+form[action="/members/new"] span.green  { background-color: green; }
+form[action="/members/new"] span.blue   { background-color: blue; }
+form[action="/members/new"] span.violet { background-color: violet; }
+form[action="/members/new"] span.purple { background-color: purple; }
+form[action="/members/new"] span.pink   { background-color: pink; }
+
+/* 5. Style the *selected* dot */
+form[action="/members/new"] input[type="radio"][name="color"]:checked + label span {
+  box-shadow: 0 0 0 3px #fff;
+}

@@ -1,3 +1,3 @@
 (1) Don't give users access to hidden fields for security purposes (e.g. URL query string "http://...?username=${username}")
 
-(2) index.js is the "main branch" while any other added routes using Express Router are "side branches". These side branches need to be mounted onto the main branch(the file with app.listen(port, () => { ... });
+(2) index.js is the "main branch" while any other added routes using Express Router are "side branches". These side branches need to be mounted onto the main branch(the file with app.listen(port, () => { ... }));

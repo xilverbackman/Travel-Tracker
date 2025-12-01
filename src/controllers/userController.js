@@ -4,8 +4,6 @@ const countries = await checkVisited();
 
 export async function userController(req, res) {
   const id = Number(req.params.id);
-  console.log("REQ PARAMS: " + JSON.stringify(req.params));
-  console.log(`REQ BODY: ${JSON.stringify(id)}`);
   try {
     const users = await getUsers();
     const listOfUsers = users.map((u) => u.id);
@@ -15,7 +13,7 @@ export async function userController(req, res) {
     const userID = Number(req.params.id);
     console.log(`User ID ${JSON.stringify(userID)}`);
     const countries = await userVisitedCountries(userID);
-    console.log(`REQ BODY: ${countries}`);
+    console.log(`User countries: ${countries}`);
     res.render("index.ejs", {
       countries: countries,
       users: users,

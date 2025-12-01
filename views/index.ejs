@@ -11,7 +11,7 @@
     <div class="user-tabs">
       <% users.forEach((user) => { %>
       <form action="/user/<%= user.id %>" method="get">
-        <button class="input"><%= user.name %></button>
+        <button class="input <%= user.colour%>"><%= user.name %></button>
         <!-- <input
           type="submit"
           name="user"
@@ -37,7 +37,11 @@
       </form>
     </div>
 
-    <form class="country-input" action="/add/<%= selectedUserID %>" method="post">
+    <form
+      class="country-input"
+      action="/add/<%= selectedUserID %>"
+      method="post"
+    >
       <input
         id="input"
         type="text"

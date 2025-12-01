@@ -1,0 +1,2 @@
+(1) Problem: Logic was nested in HTTP routes. Routes looked very lengthy and complex.
+Fix: Refactored all logic into seperate controllers.
