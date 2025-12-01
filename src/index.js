@@ -30,7 +30,7 @@ app.use("/members", addMembersRouter());
 
 // Routes
 app.get("/", homeController);
-app.post("/add/:id", countryController);
+app.post("/add/:id?", countryController);
 app.get("/user/:id", userController);
 app.get("/member", async (req, res) => {
   let users = await getUsers();

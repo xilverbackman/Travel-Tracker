@@ -953,5 +953,10 @@
         document.getElementById(code).style.fill = "teal";
       });
     </script>
+    <% if (typeof error !== "undefined" && error) { %>
+    <script>
+      alert("<%= error %>");
+    </script>
+    <% } %>
   </body>
 </html>

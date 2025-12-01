@@ -11,7 +11,12 @@ import {
 export async function countryController(req, res) {
   const { country, operation } = req.body;
   console.log("Country: " + country + ", Operation: " + operation);
-  let userID = Number(req.params.id);
+  const userID = Number(req.params.id);
+  if (!userID) {
+    return res.redirect(
+      "/?error=" + encodeURIComponent("Please choose a user first.")
+    );
+  }
   /** @type {import("pg").QueryResult<{ country_code: string }>} */
   let countryCodeList = [];
 
@@ -49,6 +54,7 @@ export async function countryController(req, res) {
   ); // TO GET ID: req.params.id
   let users = await getUsers();
   let visitedCountries = await checkVisited();
+
   if (operation === "add") {
     if (countriesVisited.includes(countryCodeList.rows[0].country_code)) {
       console.log("Country already in visited list");

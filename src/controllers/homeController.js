@@ -11,6 +11,7 @@ export async function homeController(req, res) {
   res.render("index.ejs", {
     countries: countries,
     users: users, // an array
-    selectedUserID: users.id,
+    selectedUserID: null,
+    error: req.query.error || null
   });
 }
